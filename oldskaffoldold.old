@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: ticketing
+build:
+  artifacts:
+    - image: ralphkuerbis/auth
+      context: auth
+deploy:
+  kubectl:
+    manifests:
+      - infra/k8s/auth-depl.yaml
